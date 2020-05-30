@@ -37,3 +37,28 @@ a {
 a:hover {
 	text-decoration: underline;
 }
+
+
+
+
+
+/* LAYOUT CLASSES */
+
+.container {
+	max-width:800px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+
+.display-flex { display:flex; }
+.display-inline-flex { display:inline-flex; }
+.display-block { display:block; }
+.display-inline-block { display:inline-block; }
+
+.flex-stretch { flex: 1 1 auto; }
+.flex-none { flex: none; }
+
+.flex-align-center { align-items:center; }
+.flex-justify-center { justify-content:center; }
