@@ -73,6 +73,20 @@ a:hover {
 
 
 
+
+
+/* Small Classes */
+
+.media-image {
+	max-width:100%;
+	vertical-align: text-bottom;
+}
+
+
+
+
+
+
 /* COMPONENT CLASSES */
 
 .nav ul {
