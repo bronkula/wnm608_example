@@ -377,3 +377,32 @@ a:hover {
 	pointer-events:none;
 	color:var(--color-neutral-medium);
 }
+
+
+
+
+
+/* Toggle */
+.toggle label {
+	font-size:1.3em;
+    display: inline-block;
+    width: 2em;
+    height: 1em;
+    border: 0.1em solid var(--color-neutral-medium);
+    background-color:var(--color-neutral-light);
+    border-radius: 1em;
+    position: relative;
+}
+.toggle label::after {
+	content:'';
+    display: inline-block;
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 1em;
+    position: absolute;
+    background-color:var(--color-white);
+    transition:all 0.3s;
+}
+.toggle input:checked + label::after {
+	transform:translateX(1em);
+}
