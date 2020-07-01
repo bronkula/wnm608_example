@@ -295,6 +295,7 @@ a:hover {
 .form-control {
 	margin:1em 0;
 }
+.form-select>select,
 .hotdog input,
 .hotdog,
 .form-button,
@@ -352,4 +353,27 @@ a:hover {
 .hotdog.light {
     background-color: var(--color-white);
 	color:var(--color-black);
+}
+
+
+.form-select>select {
+	padding: 0.5em 1.3em;
+	background-color: var(--color-neutral-light);
+	border-radius: 0.3em;
+	cursor: pointer;
+}
+.form-select {
+	position:relative;
+}
+
+.form-select::after {
+	content:'▾';
+	font-family:arial,sans-serif;
+	font-size:1.2em;
+	position:absolute;
+	top:50%;
+	right:0.2em;
+	transform:translateY(-50%);
+	pointer-events:none;
+	color:var(--color-neutral-medium);
 }
