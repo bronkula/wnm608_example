@@ -292,19 +292,27 @@ a:hover {
 
 
 /* FORMS */
-
+.form-control {
+	margin:1em 0;
+}
 .form-input {
     display: inline-block;
     background-color: transparent;
     border-width: 0;
-    padding: 0.2em 0.5em;
+    padding: 0.5em 1em;
     font: inherit;
     -webkit-appearance: none;
     color: inherit;
     width: 100%;
-    border-bottom: 1px solid var(--color-neutral-medium);
+    border-bottom: 1px solid var(--color-neutral-light);
     outline:0;
 }
 .form-input:focus {
-	border-bottom-color:var(--color-main-medium);
+	border-bottom-color:var(--color-main-light);
+}
+.form-label {
+    font-size: 0.8em;
+    color: var(--color-neutral-medium);
+    display: block;
+    width: 100%;
 }
