@@ -49,3 +49,21 @@ body {
 		line-height:2em;
 	}
 }
+
+
+
+
+
+
+
+
+/* Store Properties */
+.product-figure {
+    margin: 0;
+}
+.product-figure img {
+    width: 100%;
+}
+.product-figure figcaption {
+    padding: 1em;
+}
