@@ -406,3 +406,20 @@ a:hover {
 .toggle input:checked + label::after {
 	transform:translateX(1em);
 }
+
+
+
+
+
+/* Figure */
+.figure {
+	margin:0;
+	background-color:var(--color-white);
+}
+.figure img {
+	width:100%;
+	vertical-align: text-bottom;
+}
+.figure figcaption {
+	padding:1em;
+}
