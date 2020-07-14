@@ -29,7 +29,7 @@
 		</div>
 	</header>
 
-	<div class="container" id="tableofcontents">
+	<section class="container" id="tableofcontents">
 		<h2>Table of Contents</h2>
 		<div class="card">
 			<nav class="nav toc">
@@ -64,9 +64,13 @@
 				</ul>
 			</nav>
 		</div>
-	</div>
+	</section>
 
-	<div class="container" id="typography">
+
+
+
+
+	<section class="container" id="typography">
 		<h2>Typography</h2>
 
 		<div class="card soft" id="headings">
@@ -85,12 +89,12 @@
 			<p>Quam delectus, veniam tempore nostrum. Fugit magni voluptatem eaque aut nobis odit quod ipsa voluptates sapiente, quam delectus natus facere doloribus numquam? Reiciendis quos odio quisquam quidem accusantium amet placeat.</p>
 			<p>Autem accusamus est porro voluptatibus natus facere aspernatur qui voluptatem distinctio tenetur quidem unde repellendus illo praesentium perferendis molestias, accusantium itaque ab ea, cumque recusandae aliquid. Incidunt consectetur, unde cumque.</p>
 		</div>
-	</div>
+	</section>
 
 
 
 
-	<div class="container" id="cards">
+	<section class="container" id="cards">
 		<h2>Cards</h2>
 
 		<div class="grid gap">
@@ -113,19 +117,19 @@
 				<div class="card medium">Card Medium</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
 
 
 
-	<div class="container" id="viewwindow">
+	<section class="container" id="viewwindow">
 		<h2>View Window</h2>
-	</div>
+	</section>
 
 
 
 
-	<div class="container" id="navigations">
+	<section class="container" id="navigations">
 		<h2>Navigations</h2>
 
 		<script>
@@ -189,21 +193,21 @@
 				.siblings().removeClass("active")
 		})
 		</script>
-	</div>
+	</section>
 
 
 
 
-	<div class="container" id="gridsystem">
+	<section class="container" id="gridsystem">
 		<h2>Grid System</h2>
-	</div>
+	</section>
 
 
 
 
-	<div class="container" id="flexsystem">
+	<section class="container" id="flexsystem">
 		<h2>Flex System</h2>
-	</div>
+	</section>
 
 
 
@@ -231,7 +235,7 @@
 		`);
 	}
 	</script>
-	<div class="container" id="tables">
+	<section class="container" id="tables">
 		<h2>Tables</h2>
 
 		<div class="card soft">
@@ -275,11 +279,11 @@
 			
 			<script>makeTable("table lined vertical border striped")</script>
 		</div>
-	</div>
+	</section>
 
 
 
-	<div class="container" id="forms">
+	<section class="container" id="forms">
 		<h2 id="forms">Form Inputs</h2>
 
 		<div class="card soft">
@@ -357,21 +361,25 @@
 		<h2 id="hotdog">Hotdog</h2>
 
 		<div class="card soft">
+			<h3>Hotdog Basic</h3>
 			<div class="form-control">
 				<form>
 					<input type="search" class="hotdog" placeholder="Search">
 				</form>
 			</div>
+			<h3>Hotdog Dark</h3>
 			<div class="form-control">
 				<form>
 					<input type="search" class="hotdog dark" placeholder="Search">
 				</form>
 			</div>
+			<h3>Hotdog Light</h3>
 			<div class="form-control">
 				<form class="card dark">
 					<input type="search" class="hotdog light" placeholder="Search">
 				</form>
 			</div>
+			<h3>Hotdogs with Icons</h3>
 			<div class="form-control">
 				<form class="hotdog">
 					<span>&equiv;</span>
@@ -444,12 +452,13 @@
 				</div>
 			</div>
 		</div>
+	</section>
 
-
+	<section class="container">
 		<h2 id="figures">Figures</h2>
 
 		<div class="card">
-			<h3>Basic Figure</h3>
+			<h3 id="basicfigure">Basic Figure</h3>
 
 			<figure class="figure">
 				<img src="https://via.placeholder.com/400x400?text=product" alt="">
@@ -481,7 +490,7 @@
 			</div>
 		</div>
 
-		<h3>Product Grid</h3>
+		<h3 id="productfigure">Product Grid</h3>
 
 		<div class="grid gap">
 			<div class="col-xs-12 col-md-4">
@@ -513,7 +522,7 @@
 			</div>
 		</div>
 
-		<h3>Product Overlay</h3>
+		<h3 id="overlayfigure">Overlay Grid</h3>
 
 		<div class="grid gap">
 			<div class="col-xs-12 col-md-4">
@@ -550,7 +559,7 @@
 				</figure>
 			</div>
 		</div>
-	</div>
+	</section>
 	
 </body>
 </html>

@@ -14,6 +14,10 @@
 	--color-main-medium:blue;
 	--color-main-dark:darkblue;
 
+	--color-alt-light:lightgreen;
+	--color-alt-medium:green;
+	--color-alt-dark:darkgreen;
+
 	--color-black:#000;
 	--color-white:#fff;
 
@@ -51,6 +55,13 @@ a:hover {
 }
 
 
+section>h2 {
+    border-bottom: 1px dashed var(--color-neutral-medium);
+    padding: 3em 1rem 0.5em;
+}
+
+
+
 
 
 
@@ -79,6 +90,10 @@ a:hover {
 
 
 
+
+
+
+
 /* Small Classes */
 
 .media-image {
@@ -86,6 +101,11 @@ a:hover {
 	vertical-align: text-bottom;
 }
 .hidden { display:none; }
+
+
+
+
+
 
 
 
@@ -202,6 +222,12 @@ a:hover {
 
 
 
+
+
+
+
+
+
 /* CARD */
 
 .card {
@@ -238,6 +264,10 @@ a:hover {
 
 
 
+
+
+
+
 .view-window {
 	height:100vh;
 	position:relative;
@@ -246,6 +276,9 @@ a:hover {
 	background-position:center;
 	background-attachment:fixed;
 }
+
+
+
 
 
 
@@ -283,6 +316,8 @@ a:hover {
 .table.lined.border {
 	border: 1px solid var(--color-neutral-medium);
 }
+
+
 
 
 
@@ -338,24 +373,6 @@ a:hover {
 	background-color:var(--color-main-light);
 }
 
-
-
-.hotdog {
-    background-color: var(--color-neutral-light);
-    border-radius: 2em;
-    padding: 0.5em 1.5em;
-    display:flex;
-}
-.hotdog.dark {
-    background-color: var(--color-neutral-dark);
-	color:var(--color-neutral-light);
-}
-.hotdog.light {
-    background-color: var(--color-white);
-	color:var(--color-black);
-}
-
-
 .form-select>select {
 	padding: 0.5em 1.3em;
 	background-color: var(--color-neutral-light);
@@ -377,6 +394,34 @@ a:hover {
 	pointer-events:none;
 	color:var(--color-neutral-medium);
 }
+
+
+
+
+
+
+
+.hotdog {
+    background-color: var(--color-neutral-light);
+    border-radius: 2em;
+    padding: 0.5em 1.5em;
+    display:flex;
+}
+.hotdog.dark {
+    background-color: var(--color-neutral-dark);
+	color:var(--color-neutral-light);
+}
+.hotdog.light {
+    background-color: var(--color-white);
+	color:var(--color-black);
+}
+
+
+
+
+
+
+
 
 
 
@@ -406,6 +451,10 @@ a:hover {
 .toggle input:checked + label::after {
 	transform:translateX(1em);
 }
+
+
+
+
 
 
 
