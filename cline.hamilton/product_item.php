@@ -14,7 +14,7 @@
 		<div class="card soft">
 			<h2>Product Item</h2>
 
-			<p>This is item # </p>
+			<p>This is item # <?= $_GET['id'] ?></p>
 		</div>
 	</div>
 	
