@@ -276,6 +276,10 @@ section>h2 {
 	background-position:center;
 	background-attachment:fixed;
 }
+.fill-parent {
+	width:100%;
+	height:100%;
+}
 
 
 
