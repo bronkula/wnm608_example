@@ -84,8 +84,31 @@
 	<hr>
 	<?php
 
+	// Array
+	$colors = array("red","green","blue");
+
+	echo $colors[2];
+
+	echo "
+		<br>$colors[0]
+		<br>$colors[1]
+		<br>$colors[2]
+	";
+
+	echo count($colors);
+
 	?>
 
+	<div style="color:<?= $colors[1] ?>">
+		This text is green
+	</div>
+
+	<hr>
+	<?php
+
+	
+	
+	?>
 
 </body>
 </html>
