@@ -75,9 +75,11 @@
 
 	// superglobal
 	// ?name=Joey
+	echo "<a href='?name=Joey'>visit</a><br>";
 	echo "<div>My name is {$_GET['name']}</div>";
 
 	// ?name=Joey&type=textarea
+	echo "<a href='?name=Joey&type=textarea'>visit</a><br>";
 	echo "<{$_GET['type']}>My name is {$_GET['name']}</{$_GET['type']}>";
 
 	?>
@@ -127,6 +129,36 @@
 	$colorsObject = (object)$colorsAssociative;
 
 	// echo $colorsObject;
+
+	echo "<hr>";
+
+	// Array Index Notation
+	echo $colors[0]."<br>";
+	echo $colorsAssociative['red']."<br>";
+	echo $colorsAssociative[$colors[0]]."<br>";
+
+	// Object Property Notation
+	echo $colorsObject->red."<br>";
+	echo $colorsObject->{$colors[0]}."<br>";
+
+	?>
+
+	<hr>
+
+	<?php
+
+	print_r($colors);
+	echo "<hr>";
+	print_r($colorsAssociative);
+	echo "<hr>";
+	echo "<pre>",print_r($colorsObject),"</pre>";
+
+	// Function
+	function print_p($v) {
+		echo "<pre>",print_r($v),"</pre>";
+	}
+
+	print_p($_GET);
 
 	?>
 
