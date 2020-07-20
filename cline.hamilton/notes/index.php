@@ -63,13 +63,29 @@
 		
 	<?php
 
-	$firstname
-	$lastname
-	$fullname
+	$firstname = "Hamilton";
+	$lastname = "Cline";
+	$fullname = "$firstname $lastname";
 
 	echo $fullname;
 
 	?>
+	<hr>
+	<?php
+
+	// superglobal
+	// ?name=Joey
+	echo "<div>My name is {$_GET['name']}</div>";
+
+	// ?name=Joey&type=textarea
+	echo "<{$_GET['type']}>My name is {$_GET['name']}</{$_GET['type']}>";
+
+	?>
+	<hr>
+	<?php
+
+	?>
+
 
 </body>
 </html>
