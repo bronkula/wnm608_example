@@ -28,5 +28,11 @@
 		"type":"Chef",
 		"email":"mgellar1973@hotmail.com",
 		"classes":[601,608,617,820]
+	},
+	{
+		"name":"Ross Gellar",
+		"type":"Professor",
+		"email":"rgellar1971@hotmail.com",
+		"classes":[601,608]
 	}
 ]
