@@ -106,8 +106,28 @@
 	<hr>
 	<?php
 
-	
-	
+
+	// Associative Array
+	$colorsAssociative = [
+		"red" => "#f00",
+		"green" => "#0f0",
+		"blue" => "#00f"
+	];
+
+	echo $colorsAssociative['green'];
+
+	?>
+	<hr>
+	<?php
+
+	// Casting
+	$c = "$a";
+	$d = $c*1;
+
+	$colorsObject = (object)$colorsAssociative;
+
+	// echo $colorsObject;
+
 	?>
 
 </body>
