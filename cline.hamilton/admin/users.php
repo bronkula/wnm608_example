@@ -11,21 +11,31 @@ $users = file_get_json($filename);
 // CRUD, Create Read Update Delete
 
 
-print_p([$_GET,$_POST]);
+// print_p([$_GET,$_POST]);
 
-if(isset($_POST['user-name'])) {
-	$users[$_GET['id']]->name = $_POST['user-name'];
-	$users[$_GET['id']]->type = $_POST['user-type'];
-	$users[$_GET['id']]->email = $_POST['user-email'];
-	$users[$_GET['id']]->classes = explode(", ", $_POST['user-classes']);
+if(isset($_GET['action'])) {
+	switch($_GET['action']) {
+		case "update":
+			$users[$_GET['id']]->name = $_POST['user-name'];
+			$users[$_GET['id']]->type = $_POST['user-type'];
+			$users[$_GET['id']]->email = $_POST['user-email'];
+			$users[$_GET['id']]->classes = explode(", ", $_POST['user-classes']);
 
-	file_put_contents($filename,json_encode($users));
+			file_put_contents($filename,json_encode($users));
+			header("location:{$_SERVER['PHP_SELF']}?id={$_GET['id']}");
+			break;
+		case "create":
+			break;
+		case "delete":
+			break;
+	}
 }
 
 
 
 function showUserPage($user) {
 
+$id = $_GET['id'];
 $classes = implode(", ", $user->classes);
 
 // heredoc
@@ -35,7 +45,7 @@ echo <<<HTML
 		<li><a href="admin/users.php">Back</a></li>
 	</ul>
 </nav>
-<form method="post" action="">
+<form method="post" action="{$_SERVER['PHP_SELF']}?id=$id&action=update">
 	<div class="form-control">
 		<label class="form-label" for="user-name">Name</label>
 		<input class="form-input" name="user-name" id="user-name" type="text" value="$user->name" placeholder="Enter the User Name">
