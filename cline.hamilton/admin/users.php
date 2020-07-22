@@ -47,6 +47,9 @@ if(isset($_GET['action'])) {
 			header("location:{$_SERVER['PHP_SELF']}?id=$id");
 			break;
 		case "delete":
+			array_splice($users,$_GET['id'],1);
+			file_put_contents($filename,json_encode($users));
+			header("location:{$_SERVER['PHP_SELF']}");
 			break;
 	}
 }
@@ -61,12 +64,25 @@ $createorupdate = $id == "new" ? "create" : "update";
 $classes = implode(", ", $user->classes);
 
 // heredoc
-echo <<<HTML
-<nav class="nav nav-crumbs">
-	<ul>
-		<li><a href="admin/users.php">Back</a></li>
-	</ul>
-</nav>
+$display = <<<HTML
+<div>
+	<h2>$user->name</h2>
+	<div>
+		<strong>Type</strong>
+		<span>$user->type</span>
+	</div>
+	<div>
+		<strong>Email</strong>
+		<span>$user->email</span>
+	</div>
+	<div>
+		<strong>Classes</strong>
+		<span>$classes</span>
+	</div>
+</div>
+HTML;
+
+$form = <<<HTML
 <form method="post" action="{$_SERVER['PHP_SELF']}?id=$id&action=$createorupdate">
 	<h2>$addoredit User</h2>
 	<div class="form-control">
@@ -89,6 +105,24 @@ echo <<<HTML
 		<input class="form-button" type="submit" value="Save Changes">
 	</div>
 </form>
+HTML;
+
+$output = $id == "new" ? $form :
+	"<div class='grid gap'>
+		<div class='col-xs-12 col-md-7'>$display</div>
+		<div class='col-xs-12 col-md-5'>$form</div>
+	</div>
+	";
+
+$delete = $id == "new" ? "" : "<a href='{$_SERVER['PHP_SELF']}?id=$id&action=delete'>Delete</a>";
+
+
+echo <<<HTML
+<nav class="display-flex">
+	<div class="flex-stretch"><a href="{$_SERVER['PHP_SELF']}">Back</a></div>
+	<div class="flex-none">$delete</div>
+</nav>
+$output
 HTML;
 }
 
