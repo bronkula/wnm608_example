@@ -2,12 +2,25 @@
 
 include "../lib/php/functions.php";
 
-$users = file_get_json("../data/users.json");
+$filename = "../data/users.json";
+$users = file_get_json($filename);
 
 
 
 // file_put_contents json_encode explode $_POST
 // CRUD, Create Read Update Delete
+
+
+print_p([$_GET,$_POST]);
+
+if(isset($_POST['user-name'])) {
+	$users[$_GET['id']]->name = $_POST['user-name'];
+	$users[$_GET['id']]->type = $_POST['user-type'];
+	$users[$_GET['id']]->email = $_POST['user-email'];
+	$users[$_GET['id']]->classes = explode(", ", $_POST['user-classes']);
+
+	file_put_contents($filename,json_encode($users));
+}
 
 
 
