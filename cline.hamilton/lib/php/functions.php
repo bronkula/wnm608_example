@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 
 function print_p($v) {
 	echo "<pre>",print_r($v),"</pre>";
@@ -35,3 +37,36 @@ function makeQuery($conn,$qry) {
 	return $a;
 }
 
+
+
+
+
+/* CART FUNCTIONS */
+
+function array_find($array,$fn) {
+	foreach($array as $o) if($fn($o)) return $o;
+	return false;
+}
+function getCart() {
+	return isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+}
+function addToCart($id,$amount,$color) {
+	$cart  = getCart();
+
+	$p = array_find($cart,function($o) use($id) { return $o->id==$id; });
+
+	if($p) {
+		$p->amount += $amount;
+	} else {
+		$_SESSION['cart'][] = (object)[
+			"id"=>$id,
+			"amount"=>$amount,
+			"color"=>$color
+		];
+	}
+}
+function resetCart() { $_SESSION['cart'] = []; }
+
+function cartItemById($id) {
+	return array_find(getCart(),function($o){return $o->id==$id;});
+}
