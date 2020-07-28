@@ -21,7 +21,7 @@ $cart = makeQuery(makeConn(),"SELECT * FROM `products` WHERE `id` IN (4,7,10)");
 		<h2>In Your Cart</h2>
 		<div class="grid gap">
 			<div class="col-xs-12 col-md-7">
-				<div class="card soft">
+				<div class="card soft flat">
 					<?= array_reduce($cart,'cartListTemplate') ?>
 				</div>
 			</div>

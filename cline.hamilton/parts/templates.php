@@ -20,7 +20,7 @@ HTML;
 
 function cartListTemplate($r,$o){
 return $r.<<<HTML
-<div class="display-flex">
+<div class="display-flex card-section">
 	<div class="flex-none images-thumbs">
 		<img src="/images/store/$o->thumbnail">
 	</div>
