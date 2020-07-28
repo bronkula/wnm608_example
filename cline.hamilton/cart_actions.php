@@ -9,10 +9,13 @@ switch($_GET['action']) {
 		header("location:product_added_to_cart.php?id={$_POST['product-id']}");
 		break;
 	case "update-cart-item":
-		//header("location:{$_SERVER['PHP_SELF']}?id={$_GET['id']}");
+		$p = cartItemById($_POST['id']);
+		$p->amount = $_POST['amount'];
+		header("location:product_cart.php");
 		break;
 	case "delete-cart-item":
-		//header("location:{$_SERVER['PHP_SELF']}");
+		$_SESSION['cart'] = array_filter($_SESSION['cart'],function($o){return $o->id!=$_POST['id'];});
+		header("location:product_cart.php");
 		break;
 	case "reset-cart":
 		resetCart();
