@@ -21,6 +21,17 @@
 				<li><a href="product_item.php?id=3">Product 3</a></li>
 				<li><a href="product_item.php?id=4">Product 4</a></li>
 			</ul>
+
+
+			<?php
+
+			include "lib/php/functions.php";
+
+			$result = makeQuery(makeConn(),"SELECT * FROM `products`");
+
+			print_p($result);
+
+			?>
 		</div>
 	</div>
 	
