@@ -3,14 +3,16 @@
 
 function productListTemplate($r,$o) {
 return $r.<<<HTML
-<div class="col-xs-12 col-md-4">
-	<figure class="figure product">
-		<img src="/images/store/$o->thumbnail" alt="">
-		<figcaption>
-			<div>$o->title</div>
+<a class="col-xs-12 col-md-4" href="product_item.php?id=$o->id">
+	<figure class="figure product display-flex flex-column">
+		<div class="flex-stretch">
+			<img src="/images/store/$o->thumbnail" alt="">
+		</div>
+		<figcaption class="flex-none">
 			<div>&dollar;$o->price</div>
+			<div>$o->title</div>
 		</figcaption>
 	</figure>
-</div>
+</a>
 HTML;
 }
