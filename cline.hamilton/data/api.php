@@ -35,6 +35,13 @@ switch($data->type) {
 			LIMIT 12");
 		break;
 
+	case "product_sort":
+		$output['result'] = makeQuery(makeConn(),"SELECT *
+			FROM `products`
+			ORDER BY `$data->column` $data->dir
+			LIMIT 12");
+		break;
+
 	default: $output['error'] = "No Valid Type";
 }
 

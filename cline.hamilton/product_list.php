@@ -28,16 +28,30 @@ include_once "parts/templates.php";
 				</form>
 			</div>
 			<div class="form-control">
-				<div class="card soft display-flex">
-					<div class="flex-none">
-						<button data-filter="category" data-value="" type="button" class="form-button">All</button>
+				<div class="card soft">
+				<div class="display-flex">
+					<div class="flex-stretch display-flex">
+						<div class="flex-none">
+							<button data-filter="category" data-value="" type="button" class="form-button">All</button>
+						</div>
+						<div class="flex-none">
+							<button data-filter="category" data-value="fruit" type="button" class="form-button">Fruit</button>
+						</div>
+						<div class="flex-none">
+							<button data-filter="category" data-value="vegetable" type="button" class="form-button">Vegetable</button>
+						</div>
 					</div>
 					<div class="flex-none">
-						<button data-filter="category" data-value="fruit" type="button" class="form-button">Fruit</button>
+						<div class="form-select">
+							<select class="js-sort">
+								<option value="1">Newest</option>
+								<option value="2">Oldest</option>
+								<option value="3">Least Expensive</option>
+								<option value="4">Most Expensive</option>
+							</select>
+						</div>
 					</div>
-					<div class="flex-none">
-						<button data-filter="category" data-value="vegetable" type="button" class="form-button">Vegetable</button>
-					</div>
+				</div>
 				</div>
 			</div>
 

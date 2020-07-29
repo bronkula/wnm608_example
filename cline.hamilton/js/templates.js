@@ -7,7 +7,7 @@ const listItemTemplate = templater(o=>`
 			<img src="/images/store/${o.thumbnail}" alt="">
 		</div>
 		<figcaption class="flex-none">
-			<div>&dollar;${o.price}</div>
+			<div>&dollar;${o.price.toFixed(2)}</div>
 			<div>${o.title}</div>
 		</figcaption>
 	</figure>
