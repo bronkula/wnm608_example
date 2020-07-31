@@ -1,4 +1,7 @@
-<?php include_once "lib/php/functions.php"; ?><!DOCTYPE html>
+<?php
+include_once "lib/php/functions.php";
+include_once "parts/templates.php";
+?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -23,6 +26,13 @@
 			<h2>Information</h2>
 			<p>You'll love these products</p>
 		</div>
+	</div>
+
+	<div class="container">
+		<h2>Latest Fruit</h2>
+		<?php recommendedCategory("fruit"); ?>
+		<h2>Latest Vegetables</h2>
+		<?php recommendedCategory("vegetable"); ?>
 	</div>
 	
 </body>
