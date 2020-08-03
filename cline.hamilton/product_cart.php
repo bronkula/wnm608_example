@@ -3,6 +3,8 @@
 include_once "lib/php/functions.php";
 include_once "parts/templates.php";
 
+$cart = getCart();
+
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,18 +19,38 @@ include_once "parts/templates.php";
 
 	<div class="container">
 		<h2>In Your Cart</h2>
-		<div class="grid gap">
-			<div class="col-xs-12 col-md-7">
-				<div class="card soft flat">
-					<?= array_reduce(getCartItems(),'cartListTemplate') ?>
+
+		<?php
+
+		if(count($cart)) {
+			?>
+			<div class="grid gap">
+				<div class="col-xs-12 col-md-7">
+					<div class="card soft flat">
+						<?= array_reduce(getCartItems(),'cartListTemplate') ?>
+					</div>
+				</div>
+				<div class="col-xs-12 col-md-5">
+					<div class="card soft flat">
+						<?= cartTotals() ?>
+						<div class="card-section">
+							<a href="product_checkout.php" class="form-button">Checkout</a>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="col-xs-12 col-md-5">
-				<div class="card soft flat">
-					<?= cartTotals() ?>
+			<?php
+		} else {
+			?>
+				<div class="card soft">
+					<p>No items in cart</p>
 				</div>
-			</div>
-		</div>
+
+				<h3>Other Recommendations</h3>
+				<?php recommendedAnything(6); ?>
+			<?php
+		}
+		?>
 	</div>
 	
 </body>

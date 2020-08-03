@@ -79,9 +79,6 @@ return <<<HTML
 	<div class="flex-stretch"><strong>Total</strong></div>
 	<div class="flex-none">&dollar;$taxedfixed</div>
 </div>
-<div class="card-section">
-	<a href="product_checkout.php" class="form-button">Checkout</a>
-</div>
 HTML;
 }
 
@@ -98,6 +95,10 @@ HTML;
 }
 
 
+function recommendedAnything($limit=3) {
+	$result = makeQuery(makeConn(),"SELECT * FROM `products` ORDER BY rand() LIMIT $limit");
+	recommendedProducts($result);
+}
 function recommendedCategory($cat,$limit=3) {
 	$result = makeQuery(makeConn(),"SELECT * FROM `products` WHERE `category`='$cat' ORDER BY `date_create` DESC LIMIT $limit");
 	recommendedProducts($result);
